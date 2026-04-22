@@ -1,6 +1,6 @@
 {
   "name": "lsp-prettier",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Formatter-only LSP server powered by Prettier.",
   "license": "MIT",
