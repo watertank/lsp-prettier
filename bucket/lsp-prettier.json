@@ -1,0 +1,28 @@
+{
+  "version": "0.2.1",
+  "description": "Formatter-only LSP server powered by Prettier.",
+  "homepage": "https://github.com/watertank/lsp-prettier",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/watertank/lsp-prettier/releases/download/v$version/lsp-prettier-windows-x64.exe",
+      "hash": "sha256:7a20aa930c89252f3251521b7b0b49fd3f54700130be06f2a1a783bf1e353f87"
+    }
+  },
+  "bin": [
+    [
+      "lsp-prettier-windows-x64.exe",
+      "lsp-prettier"
+    ]
+  ],
+  "checkver": {
+    "github": "https://github.com/watertank/lsp-prettier"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/watertank/lsp-prettier/releases/download/v$version/lsp-prettier-windows-x64.exe"
+      }
+    }
+  }
+}

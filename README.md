@@ -13,6 +13,12 @@ pnpm add -g lsp-prettier
 bun add -g lsp-prettier
 ```
 
+### Scoop (Windows)
+```powershell
+scoop bucket add lsp-prettier https://github.com/watertank/lsp-prettier
+scoop install lsp-prettier
+```
+
 ## Usage
 
 This server communicates over stdio. Start it with `--stdio`:
