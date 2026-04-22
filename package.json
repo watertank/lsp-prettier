@@ -1,0 +1,39 @@
+{
+  "name": "lsp-prettier",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Formatter-only LSP server powered by Prettier.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watertank/lsp-prettier.git"
+  },
+  "type": "module",
+  "bin": {
+    "lsp-prettier": "dist/server.js"
+  },
+  "scripts": {
+    "build:exe:linux-x64": "bun build src/server.ts --compile --target=bun-linux-x64 --minify --outfile out/lsp-prettier-linux-x64",
+    "build:exe:macos-arm64": "bun build src/server.ts --compile --target=bun-darwin-arm64 --minify --outfile out/lsp-prettier-macos-arm64",
+    "build:exe:macos-x64": "bun build src/server.ts --compile --target=bun-darwin-x64 --minify --outfile out/lsp-prettier-macos-x64",
+    "build:exe:windows-x64": "bun build src/server.ts --compile --target=bun-windows-x64 --minify --outfile out/lsp-prettier-windows-x64.exe",
+    "build:exe": "bun run build:exe:linux-x64 && bun run build:exe:macos-arm64 && bun run build:exe:macos-x64 && bun run build:exe:windows-x64",
+    "build": "bun build --target=node --packages=external --outfile=dist/server.js src/server.ts",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "dependencies": {
+    "prettier": "^3.0.0",
+    "vscode-languageserver": "^9.0.0",
+    "vscode-languageserver-textdocument": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
